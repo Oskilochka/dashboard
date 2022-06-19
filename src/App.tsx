@@ -2,8 +2,27 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import "./App.css";
 import { routes } from "./route";
+import {
+  AreaChart,
+  BarChart,
+  Calendar,
+  ColorMappingChart,
+  ColorPicker,
+  Customers,
+  Ecommerce,
+  Editor,
+  Employees,
+  FinancialChart,
+  Kanban,
+  LineChart,
+  Orders,
+  PieChart,
+  PyramidChart,
+  StackedChart,
+} from "./pages";
+
+import "./App.css";
 
 const App = () => {
   const activeMenu = true;
@@ -41,29 +60,29 @@ const App = () => {
 
         <div>
           <Routes>
-            <Route path={routes.base} element='Ecommerce' />
-            <Route path={routes.ecommerce} element='Ecommerce' />
+            <Route path={routes.base} element={<Ecommerce />} />
+            <Route path={routes.ecommerce} element={<Ecommerce />} />
 
             {/* Pages */}
-            <Route path={routes.orders} element='Orders' />
-            <Route path={routes.employees} element='Employees' />
-            <Route path={routes.customers} element='Customers' />
+            <Route path={routes.orders} element={<Orders />} />
+            <Route path={routes.employees} element={<Employees />} />
+            <Route path={routes.customers} element={<Customers />} />
 
             {/* Apps */}
-            <Route path={routes.kanban} element='Kanban' />
-            <Route path={routes.editor} element='Editor' />
-            <Route path={routes.calendar} element='Calendar' />
-            <Route path={routes.colorPicker} element='Color Picker' />
+            <Route path={routes.kanban} element={<Kanban />} />
+            <Route path={routes.editor} element={<Editor />} />
+            <Route path={routes.calendar} element={<Calendar />} />
+            <Route path={routes.colorPicker} element={<ColorPicker />} />
 
             {/* Charts */}
-            <Route path={routes.chartLine} element='Line' />
-            <Route path={routes.chartArea} element='Area' />
-            <Route path={routes.chartBar} element='Bar' />
-            <Route path={routes.chartPie} element='Pie' />
-            <Route path={routes.chartFinancial} element='Financial' />
-            <Route path={routes.chartColorMapping} element='Color mapping' />
-            <Route path={routes.chartPyramid} element='Pyramid' />
-            <Route path={routes.chartStacked} element='Stacked' />
+            <Route path={routes.chartLine} element={<LineChart />} />
+            <Route path={routes.chartArea} element={<AreaChart />} />
+            <Route path={routes.chartBar} element={<BarChart />} />
+            <Route path={routes.chartPie} element={<PieChart />} />
+            <Route path={routes.chartFinancial} element={<FinancialChart />} />
+            <Route path={routes.chartColorMapping} element={<ColorMappingChart />} />
+            <Route path={routes.chartPyramid} element={<PyramidChart />} />
+            <Route path={routes.chartStacked} element={<StackedChart />} />
           </Routes>
         </div>
 
